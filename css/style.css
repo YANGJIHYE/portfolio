@@ -330,16 +330,16 @@ form{width: 97%; line-height: 0rem; }
 
 @media screen and (max-width:450px) {
   #arrow_wrap {right: 16%;}
-  .text_line span {margin-left: 2%;}
+  .text_line span {margin-left: 2%; letter-spacing: 0rem;}
   .container1 .myimg {left: 19%;}
   .container1 .typed {left: 4%;}
   .text_box .left1_text {font-size: 2.5rem;}
   .typed .typed_1 {font-size: 9rem;}
   .border_bottom {height: 6vh;}
-  #project>.container_p>.p_btn {position: absolute; bottom: -8%; right: 0px;}
+  #project>.container_p>.p_btn {position: absolute; bottom: 16%; right: 0px;}
   #project>.container_p>.p_inner_wrap {overflow: inherit;}
-  .p_inner_wrap>.p_inner>.p_left {position: absolute; bottom: -93%; left: 3%;}
-  .p_inner_wrap>.p_inner>.p_right {position: absolute; top: -81px;}
+  .p_inner_wrap>.p_inner>.p_left {position: absolute; bottom: -70%; left: 3%;}
+  .p_inner_wrap>.p_inner>.p_right {position: absolute; top: -130px;}
   .link {height: 100%; display: flex; align-items: center;}
   .link>ul {line-height: 0rem;}
   .contact_m {display: none;}
