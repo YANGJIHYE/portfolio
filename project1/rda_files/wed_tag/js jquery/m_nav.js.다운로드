@@ -1,0 +1,82 @@
+// JavaScript Document
+
+$(function(){
+	
+
+	// 메뉴 닫기
+	$(".btn_close button").focus(function() {
+	 
+	  $(".depth1m ul").hide();
+	  
+	});
+	
+	
+	/*     MOBILE     */
+	
+	$(document).on("click","#top_wrap .menu-open",function(){
+		
+		$("header #mainNav").show();
+		$('body').addClass('layerOpen'); // body 스크롤 없애기
+
+	});
+	
+	$(document).on("click","#mainNav .menu-close",function(){
+		
+		$("header #mainNav").hide();
+		$('body').removeClass('layerOpen'); // body 스크롤 살리기
+	});
+	
+	var lnb = ".depth1m a";  //   lnb 클릭영역
+	
+	$(document).on("click",lnb,function(){
+			
+		if($(window).width()<1100){
+			var self = this;		
+			
+			//현재 선택된 메뉴의 하위메뉴 의 열림,닫힘 상태를 변수에 담는다.
+			var openLength = $(this).closest("ul").find("li ul[style*='block']").length;
+			var open = $(this).closest("ul").find("li ul[style*='block']");
+			var displayCondition = $(this).next().css("display");
+				
+			//클릭한 버튼에 하위 메뉴가 있고 slide 이벤트가 완료가 되었다면 (더블 클릭 방지)
+			if($(this).next().is("ul") == true){
+				
+				if( openLength > 0 && displayCondition=="none"){  // 클릭한 메뉴의 하위메뉴는 닫혀있고 다른 메뉴가 열려있을때
+					open.slideUp(500,'easeInOutExpo',function(){
+					$("#mainNav a[class^='on']").removeClass("on");
+					$(self).addClass("on");	
+					$(self).parents("ul").siblings("a").addClass("on");
+					$(self).next().slideDown(500,'easeInOutExpo');
+						
+					});
+					return false;
+						
+				}else if( openLength > 0 && displayCondition=="block"){  // 클릭한 메뉴의 하위메뉴가 열려있을때
+					open.slideUp(500,'easeInOutExpo',function(){
+						open.prev().removeClass("on");
+					});
+					return false; 
+							
+				}else if( openLength == 0 && displayCondition=="none" ){  // 아무런 메뉴도 열리지 않았을때
+					$("#mainNav a[class^='on']").removeClass("on");
+					$(self).addClass("on");	
+					$(self).parents("ul").siblings("a").addClass("on");
+					$(self).next().slideDown(500,'easeInOutExpo');
+					return false;	
+				}
+				
+			}else{
+				
+				open.slideUp(500,'easeInOutExpo');
+				$("#mainNav a[class^='on']").removeClass("on");
+				$(self).addClass("on");	
+				$(self).parents("ul").siblings("a").addClass("on");
+			
+			}
+		
+		}
+		}); //메뉴 버튼 클릭 이벤트 END	
+	
+	
+	
+});

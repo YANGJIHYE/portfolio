@@ -1,0 +1,97 @@
+
+$(document).ready(function(){
+
+	// top_fixed	
+	$(window).scroll(function  () {
+		var w_top = $(window).scrollTop();
+		if ( w_top > 0 ) {
+			$("#header").addClass("fixed");
+		}else {
+			$("#header").removeClass("fixed");
+		}
+	});
+
+	//search
+		$("#top_wrap>button.search-open").click(function(){
+			$(this).toggleClass('close');
+			$(".fr>.mobile-search").slideToggle(200);
+		});
+	
+	// 관련사이트 바로가기
+   $('.sitelink > li > button').on('click', function () {
+        if ($(this).parent('li').hasClass('on')) {
+			//console.log("닫힘!")
+            $('.sitelink > li').removeClass('on');
+        } else {
+            //console.log("열림!")
+			$('.sitelink > li').removeClass('on');
+            $(this).parent('li').addClass('on');
+        }
+    });
+
+    $('.sitelink > li .list dd:last-child').focusout(function () {
+        $(this).parent().parent('li').removeClass('on');
+    });
+
+	// 탑버튼/* 상단 바로가기 */
+    $(window).scroll(function () {
+		if ($(this).scrollTop() > 100) {
+			$('#cntTop').fadeIn();
+		} else {
+			$('#cntTop').fadeOut();
+		}
+	});
+
+	$('#cntTop').click(function () {
+		$('body,html').animate({
+			scrollTop: 0
+		}, 800);
+		return false;
+	});
+
+	/* result_tab */		
+	$(".result_tab").click(function(){
+		//선택한 탭활성화
+		$(".result_tab").removeClass('on');
+		$(this).addClass("on");
+		
+		//선택한 컨텐츠 표시
+		var onTab = $(this).attr('data-tab');
+		$(".tab_conts").hide();
+		$('#' + onTab).show();
+	});
+
+
+
+
+	/* accordian */
+	$('.accordian .accoList:first-child, .accordian .accoCont:first-child').addClass('current');
+	$('.accordian .accoList > button').off('click');
+	$('.accordian .accoList > button').on("click",function(){
+        var title = $(this).parent('.accoList');
+        if (title.hasClass('current')){
+			$(".accordian .accoList").removeClass("current");
+          } else {
+			title.addClass('current');
+			$(".accordian .accoList").not(title).removeClass("current");
+		  }
+        $("html, body").animate({scrollTop:$(this).offset().top - 120}, 300);
+    });
+
+
+
+	// 농촌진흥사업:농톤진흥사업 기본(시행)계획
+	//$('.sub_tab_9 li a.on').attr('title','선택됨');
+	// 정보공개:공공데이터개방/일반재정
+	//$('.sub_tab_2 li.current a').attr('title','선택됨');
+	// 찾아오시는길:농촌진흥청내부    
+	//$('.map_inside_tab li a.on').attr('title','선택됨');
+
+	// 연구성과보고서   
+	$(".rda_RSTab > li > a").click(function(){
+		$(this).parent().addClass("on").attr('title','선택됨');
+		$(".rda_RSTab li").not($(this).parent()).removeClass("on").attr('title','');
+	});
+
+});
+

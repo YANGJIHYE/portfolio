@@ -1,0 +1,79 @@
+@charset "utf-8";
+@import url('https://fonts.googleapis.com/css2?family=Nanum+Gothic:wght@400;700;800&display=swap');
+@import url('https://cdn.rawgit.com/moonspam/NanumSquare/master/nanumsquare.css');
+
+/* 공통속성 */
+.container{width: 1286px; height: 100%; margin: 0 auto;}
+
+.wrap{width: 100%; margin: 0 auto;}
+
+/* 팝업 */
+#popup_wrap{width: 100%; height: 47px; margin: 0 auto; background: linear-gradient(to right, #0081a0 0%, #18a33e 50%, #86c51c 100%);}
+.popup{width: 100%; height: 100%; display: flex; justify-content: space-between;}
+.popup_item{width: 100%; margin: 0 auto;}
+.popup_item>ul{}
+.popup_item>ul>li{width: 100%; height: 100%;}
+.popup_item>ul>li>a{display: block; color: #fff; font-size: 18px; font-weight: bold; text-shadow: 1px 1px 3px rgb(0 0 0 / 50%); letter-spacing: -0.2px;}
+.popup_item>ul>li>a:hover{color: rgb(241, 238, 38); transition: .5s;}
+.popup_item>ul>li>a>span{line-height: 47px;}
+.close_wrap{display: flex;}
+.popup_close_today{width: 165px; height: 100%; line-height: 47px; text-align: left; box-sizing: border-box; border-right: 1px solid rgba(255,255,255,0.2); position: relative;}
+input[id="cb1"]{width: 22px; height: 22px; border-radius: 0.188rem; background: #fff; vertical-align: middle; position: absolute; top: 27%;}
+input[id="cb1"]:checked{width: 22px; height: 22px; border-radius: 3px; background: #fff;}
+.popup_label{font-size: 12px; color: #fff; font-weight: 700; text-shadow: 1px 1px 4px rgb(0 0 0 / 50%); position: absolute; top: 0%; left: 18%;}
+.popup_close{width: 76px; height: 47px;}
+.popup_close_btn{width: 14px; height: 14px; margin: 16.5px auto; line-height: 47px; position: relative;}
+.popup_close_btn>span{display: block; background-color: #fff; width: 2px; height: 14px; position: absolute;}
+.popup_close_btn>span:nth-child(1){transform: rotate(-45deg) translateY(-50%); top: 35%; left: 80%;}
+.popup_close_btn>span:nth-child(2){transform: rotate(45deg) translateY(-50%); top: 35%; left: 10%;}
+
+/* header */
+#header{width: 100%; height: 68px; margin: 0 auto;}
+.container2{width: 1255px; height: 68px; margin: 0 auto; display: flex; justify-content: space-between;}
+h1{width: 190px; height: 68px; padding: 10px 0; box-sizing: border-box;}
+h1 a{display: block;}
+h1 a img{height: 48px; }
+.nav{height: 68px;}
+.nav .menu{width: 662px;}
+.menu>.cf{list-style: none; height: 68px; display: flex; justify-content: space-between; /* background: red; */}
+.menu>.cf>li{/* background: yellow; */ text-align: center; margin-right: 60px; box-sizing: border-box;}
+.menu>.cf>li>a{display: block; font-size: 22px; font-weight: 700; color: #333333; line-height: 68px; text-align: center; padding: 0 10px;}
+.menu>.cf>li>ul{background: tan; display: none;}
+.menu>.cf>li>ul>li{display: block;
+    font-size: 16px;
+    line-height: 20px;
+    font-weight: 700;
+    padding: 10px 0;
+    text-align: center;
+}
+.cf>li>ul>li a{}
+.gnb_link{display: flex; justify-content: space-between;}
+.gnb_link>ul{list-style: none;}
+.gnb_link>ul>.potal{height: 42px; line-height: 42px;}
+.gnb_link>ul>.potal a{border: 1px solid #ccc; border-radius: 5px; padding: 10px 14px; margin: 13px 10px 13px 0; font-size: 16px; line-height: 68px; font-weight: 700;}
+.gnb_link>ul>.h-icon{width: 28px; height: 28px;}
+.gnb_link>ul>li:nth-child(2){width: 28px; height: 28px;}
+.gnb_link>ul>li:nth-child(3){width: 28px; height: 28px;}
+.gnb_link>ul>li:nth-child(4){width: 28px; height: 28px;}
+.gnb_link>ul>li:nth-child(2)>a>img{display: block; width: 28px; height: 28px; }
+.gnb_link>ul>li:nth-child(3)>a>img{display: block; width: 28px; height: 28px; }
+.gnb_link>ul>li:nth-child(4)>a>img{display: block; width: 15px; height: 28px; }
+
+/* banner */
+#banner{width: 1920px;}
+#banner .banner_slide{width: 100%; margin: 0 auto; overflow: hidden;}
+#banner .banner_slide ul{width: 15360px; height: 624px;}
+#banner .banner_slide ul li{float: left;}
+#banner .banner_slide ul li a{}
+#banner .banner_slide ul li a img{display: block; width: 1920px; height: 624px;}
+
+/* news */
+.news{width: 100%; height: 100px; background: #f0eddc; margin: 0 auto; padding: 70px 0 40px;}
+.news .container3{width: 1342px; margin: 0 auto; }
+.news .container3 h2{text-align: center; font-size: 40px; margin-bottom: 20px; font-weight: 900; line-height: 50px; color: #444; font-family: 'Nanum Square', sans-serif; letter-spacing: -0.2px;}
+.news_board{width: 560px; margin: 0 auto;}
+.news_board ul{list-style: none;}
+.news_board ul li{float: left; width: 71px; padding: 0 55px;}
+.news_board ul li a{display: inline-block; font-size: 20px; color: #666;}
+
+

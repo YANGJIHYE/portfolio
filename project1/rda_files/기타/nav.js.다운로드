@@ -1,0 +1,118 @@
+$(function(){
+
+	// ----- Header (Pc)
+	function header(){
+
+		// - 펼쳐진 메뉴
+		var menu = $('.menu > li'),
+			menuA = $('.menu > li > a');
+	
+						
+			// ** 웹접근성을 위한 포커스 시	: 1뎁스 메뉴
+			menuA.bind('focus', function(){
+				var Li = $(this).parent('li'),
+					i = Li.index() + 1;				
+				
+				$('#nav_wrap').addClass('headerHover');
+				
+				$(this).addClass('menuListOn').css({'opacity':'1'});
+				$(this).parent('li').siblings().find('> a').removeClass('menuListOn').css({'opacity':'.5'});
+				
+				$('.menuList .ml0' + i).show().siblings().hide();
+				
+				Li.find('.menuList').show();
+				Li.siblings().find('.menuList').hide();
+				
+			});
+
+			// ** 웹접근성을 위한 포커스 시	: 전체메뉴
+			$('.btn_fullmenu').bind('focus', function(){
+				$('.menuList').hide();
+				menuA.removeClass('menuListOn').css({'opacity':'1'});				
+			});
+
+			// - 1뎁스 마우스 오버 시
+			menu.bind('mouseenter focus', function(){
+				
+					$(this).find('> a').addClass('menuListOn').css({'opacity':'1'});	
+					$(this).siblings().find('> a').removeClass('menuListOn').css({'opacity':'.5'});
+					
+					
+					$(this).find('.menuList').stop(true,true).show().css('z-index','100');
+					$(this).siblings().find('.menuList').stop(true,true).hide().css('z-index','');
+			});
+
+			// Header 마우스 벗어났을때
+			$('#nav_wrap').bind('mouseleave', function(){
+				menuA.removeClass('menuListOn');
+				$('.depth01').css({'opacity':'1'});
+				$('.menuList').slideUp();
+				
+			});
+			
+			// 3뎁스 마우스 오버 시
+			$('.mlCnt a')
+				.hover(function() {
+					$(this).addClass('hoverOn');
+				}, function() {				
+					$(this).removeClass('hoverOn');
+				});
+		
+			// 3뎁스 새창열림 링크
+			//$('.menuList a[target^="_blank"]').each(function() {
+			//	var	blank = '_blank';
+			//	var Title = $(this).attr('title');
+			//	var NewTabs = Title + ' (새창열림)';
+			//	if(Target = blank){
+			//		$(this).append('<i></i>');
+			//		$(this).attr('class','newTab');
+			//		$(this).attr('title', NewTabs);
+			//	}
+			//});	
+		
+	}	
+	header();
+
+
+	// 전체 메인메뉴 열기	
+
+	var $menuOpen = $('.btn_fullmenu'),
+		$menuTxtOpen = $('.headUtil .menuTxt'),
+		$menuClose = $('.menuClose'),
+		$mainNav = $('#mainNav');
+		//$departOpen = $('button.orgButton');
+		//$departLayer = $('.departLayer');
+
+	$menuOpen.click(function(){
+		var $scrollHeight = $('body').scrollTop();
+
+		$('body').addClass('layerOpen'); // body 스크롤 없애기
+		$('body').css('top', - $scrollHeight);
+		
+		$mainNav.fadeIn();
+		$menuClose.addClass('Open');
+		$mainNav.find('.allMenuNav .depth1m:first-child > a').focus();
+	});
+	$menuTxtOpen.click(function(){
+		var $scrollHeight = $('body').scrollTop();
+
+		$('body').addClass('layerOpen'); // body 스크롤 없애기
+		$('body').css('top', - $scrollHeight);
+		
+		$mainNav.fadeIn();
+	});
+	// 전체 메인메뉴 닫기
+	$menuClose.click(function(){
+		var $scrollHeight = $('body').scrollTop();
+
+		$('body').removeClass('layerOpen'); // body 스크롤 살리기
+		$menuClose.delay(500).removeClass('Open');
+		$('body').css('top', $scrollHeight);
+		
+		$mainNav.fadeOut();
+		$menuOpen.focus();
+	});
+
+});		
+	
+

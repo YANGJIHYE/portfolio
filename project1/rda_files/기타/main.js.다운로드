@@ -1,0 +1,185 @@
+$(document).ready(function(){
+
+	// mvisual_Slide
+var mvisual_Slide = $('#mvisual_Slide').bxSlider({
+		mode: 'horizontal',//horizontal, vertical, fade
+		slideWidth: 'auto',
+		slideHeight: 360,		
+		auto:true,
+		autoControls:true,
+		stopAutoOnClick:true,
+		pager:true,
+		touchEnabled : (navigator.maxTouchPoints > 0 ),
+		nextText: '<span class="hide">다음</span>',
+		prevText: '<span class="hide">이전</span>',
+			
+		//웹접근성 추가
+		onSliderLoad:function(){
+			$('.bx-clone').find('a').prop('tabindex','-1');
+		},
+		onSlideAfter:function(){
+			$(".mv_slide").children("li").each(function(){
+
+				if($(this).attr("aria-hidden") == "false"){
+
+					$(this).find("a").attr("tabIndex","0");
+
+				}else{
+
+					$(this).find("a").attr("tabIndex","-1");
+
+				}
+
+			});
+
+		}
+	  });
+
+	$('.mv_slide a').focusin(function () {
+		mvisual_Slide.stopAuto();
+	});
+	  
+	// noticeSlide
+var noticeSlide = $('#noticeSlide').bxSlider({
+		slideWidth: 'auto',
+		slideHeight: 232,		
+		auto:true,
+		autoControls:true,
+		stopAutoOnClick:true,
+		pager:true,
+		pagerType: 'short', /*페이징 */
+		touchEnabled : (navigator.maxTouchPoints > 0 ),
+		nextText: '<span class="hide">다음</span>',
+		prevText: '<span class="hide">이전</span>',
+			
+		//웹접근성 추가
+		onSliderLoad:function(){
+			$('.bx-clone').find('a').prop('tabindex','-1');
+		},
+		onSlideAfter:function(){
+			$(".notice_slide").children("li").each(function(){
+
+				if($(this).attr("aria-hidden") == "false"){
+
+					$(this).find("a").attr("tabIndex","0");
+
+				}else{
+
+					$(this).find("a").attr("tabIndex","-1");
+
+				}
+
+			});
+
+		}
+	  });
+
+	$('.notice_slide a').focusin(function () {
+		noticeSlide.stopAuto();
+	});
+ 
+	// directorSlide
+var directorSlide = $('#directorSlide').bxSlider({
+		slideWidth: 'auto',
+		auto: false,
+		autoControls: true,
+		pager: false,
+		touchEnabled : (navigator.maxTouchPoints > 0 ),
+		nextText: '<span class="hide">다음</span>',
+		prevText: '<span class="hide">이전</span>',
+			
+		//웹접근성 추가
+		onSliderLoad:function(){
+			$('.bx-clone').find('a').prop('tabindex','-1');
+		},
+		onSlideAfter:function(){
+			$(".director_slide").children("li").each(function(){
+
+				if($(this).attr("aria-hidden") == "false"){
+
+					$(this).find("a").attr("tabIndex","0");
+
+				}else{
+
+					$(this).find("a").attr("tabIndex","-1");
+
+				}
+
+			});
+
+		}
+	  });
+
+	$('.director_slide a').focusin(function () {
+		directorSlide.stopAuto();
+	});
+ 
+	// bannerSlider
+var bannerSlide = $('#bannerSlide').bxSlider({
+		auto: true,
+		autoControls: true,		
+		speed : 2000, /* 전환속도 */
+		pause : 5000, /* 정지시간 */
+		slideWidth: 137,
+		slideHeight: 45,
+		touchEnabled : (navigator.maxTouchPoints > 0 ),
+		nextText: '<span class="hide">다음</span>',
+		prevText: '<span class="hide">이전</span>',
+		minSlides: 1,
+		maxSlides: 8,
+		slideMargin: 18,
+		moveSlides:1,
+		pager: false
+	  });
+
+		// snsSlider
+var snsSlider = $('#snsSlider').bxSlider({
+		speed:1000,
+		slideWidth: 288,
+		slideHeight: 250,
+		touchEnabled : (navigator.maxTouchPoints > 0 ),
+		nextText: '<span>다음</span>',
+		prevText: '<span>이전</span>',
+		minSlides: 1,
+		maxSlides: 4,
+		slideMargin: 12,
+		moveSlides:1,
+		pager: true,
+
+		//웹접근성 추가
+		onSliderLoad:function(){
+			$('.bx-clone').find('a').prop('tabindex','-1');
+		},
+		onSlideAfter:function(){
+			$(".sns_slide").children("li").each(function(){
+
+				if($(this).attr("aria-hidden") == "false"){
+
+					$(this).find("a").attr("tabIndex","0");
+
+				}else{
+
+					$(this).find("a").attr("tabIndex","-1");
+
+				}
+
+			});
+
+		}
+	  });
+
+	$('.sns_slide a').focusin(function () {
+		snsSlider.stopAuto();
+	});
+	
+	$(".wsite-container > ul > li > button").click(function(){
+		$(this).parent().addClass("active");
+		$(".wsite-container ul li").not($(this).parent()).removeClass("active");
+		return false;
+	}).focus(function(){
+		$(this).mouseover();
+	});
+
+
+});
+
