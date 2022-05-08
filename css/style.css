@@ -336,7 +336,6 @@ form{width: 97%; line-height: 0rem; }
   .text_box .left1_text {font-size: 2.5rem;}
   .typed .typed_1 {font-size: 9rem;}
   .border_bottom {height: 6vh;}
-  .text_line span {letter-spacing: 0.05rem;}
   #project>.container_p>.p_btn {position: absolute; bottom: -8%; right: 0px;}
   #project>.container_p>.p_inner_wrap {overflow: inherit;}
   .p_inner_wrap>.p_inner>.p_left {position: absolute; bottom: -93%; left: 3%;}
