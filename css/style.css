@@ -20,10 +20,10 @@ html, body{height: 100%;}
 #pagebtn ul li.active span{ background: #FFB400}
 
 /* 공통속성 */
-.section{width: 100%; height: 100vh; font-size: 10rem; /* text-align: center; */ padding-top: 8rem; box-sizing: border-box; overflow: hidden;}
+.section{width: 100%; height: 100vh; font-size: 10rem; padding-top: 8rem; box-sizing: border-box; overflow: hidden;}
 
 /* header menu */
-#header{width: 100%; /* max-width: 1920px; */ height: 8rem; margin: 0 auto; position: fixed; top: 0; z-index: 999; background: #F5F5F5; left: 50%; transform: translateX(-50%);}
+#header{width: 100%; height: 8rem; margin: 0 auto; position: fixed; top: 0; z-index: 999; background: #F5F5F5; left: 50%; transform: translateX(-50%);}
 .container{height: 8rem; margin: 0 8rem auto;}
 .header_menu{width: 100%;}
 .header_menu h1{font-size: 3.4rem; text-transform: uppercase; font-weight: bold; font-family: 'Noto Sans' sans-serif; display: inline;}
@@ -70,7 +70,7 @@ html, body{height: 100%;}
 .info_text>ul{display: flex;}
 .info_text>ul>li{font-size: 2rem; color: #000; margin-bottom: 3rem; margin-left: 5.4rem; letter-spacing: 0rem;}
 .info_text>ul>li>i{font-size: 2rem; color: #000;}
-.right{width: 32%; height: 41.3rem; /* background: yellow; */ margin: 4rem 0 0;}
+.right{width: 32%; height: 41.3rem; margin: 4rem 0 0;}
 .right>img{width: 31rem; height: 41.3rem;}
 .about_bottom{width: 100%; height: 26rem; background: #F5F5F5; display: flex; justify-content: center;}
 .skills{height: 100%; margin: 0 auto; line-height: 11rem; overflow: hidden;}
@@ -216,7 +216,7 @@ form{width: 97%; line-height: 0rem; }
   100% { right: 16%;}
 }
 
-/* mobile menu 655px */
+/* mobile menu 655px 시작*/
 .nav{width: 5.5rem; height: 6rem; line-height: 6rem; display: none;}
 .nav div{width: 4.5rem; height: .5rem; background-color: #FFB400; margin: 5px; transition: all .5s;}
 .toggle .line1{transform: rotate(-45deg) translate(-8px, 6px);}
@@ -328,6 +328,7 @@ form{width: 97%; line-height: 0rem; }
   .text_line span {margin-left: 4%;}
 }
 
+/* mobile size */
 @media screen and (max-width:450px) {
   #arrow_wrap {right: 16%;}
   .text_line span {margin-left: 2%; letter-spacing: 0rem;}
